@@ -5,15 +5,12 @@
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script th:src="@{/js/tailwind.config.js}"></script>
-
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body class="w-full h-auto flex flex-col bg-yellow-50">
 <section class="w-full h-[110vh] flex flex-col justify-between">
-    <header th:insert="fragments/header.html :: header" class="w-full h-20"></header>
-
-        <article th:replace="./fragments/register :: registro"></article>
-
-    <footer th:insert="fragments/footer.html :: footer" class="w-full h-20 flex"></footer>
+    <article th:insert="fragments/header.html :: header" class="w-full h-20"></article>
+    <article th:replace="./fragments/register :: registro"></article>
 </section>
 </body>
 </html>

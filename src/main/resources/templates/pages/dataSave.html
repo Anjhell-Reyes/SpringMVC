@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://kit.fontawesome.com/99f2056fb3.js" crossorigin="anonymous"></script>
 </head>
-<body class="w-full h-auto flex flex-col bg-yellow-50">
-<section class="w-full h-[110vh] flex flex-col justify-between">
-    <header th:insert="fragments/header.html :: header" class="w-full h-20"></header>
-    <section th:insert="fragments/table.html :: table"></section>
-    <footer th:insert="fragments/footer.html :: footer" class="w-full h-20 flex"></footer>
-</section>
+<body>
+<div class="body">
+    <section class="sectionDataSave">
+        <article th:insert="fragments/header.html :: header" class="headerDataSave"></article>
+        <article th:insert="fragments/table.html :: table"></article>
+        <article th:insert="fragments/footer.html :: footer"></article>
+    </section>
+</div>
 </body>
 </html>

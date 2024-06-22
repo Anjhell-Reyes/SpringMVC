@@ -64,7 +64,7 @@ public class UserController {
     }
 
     @PostMapping("/datos") // se usa para definir rutas y manejar las solicitudes POST entrantes a una aplicación web
-    public String CreateUser(@ModelAttribute Registro registro){
+    public String CreateUser(@ModelAttribute Registro registro){//@ModelAttribute se utiliza para vincular datos de modelos a los métodos de controladores
         serviceRegistro.saveRegister(registro);
         return "redirect:/datos";
     }
@@ -76,7 +76,8 @@ public class UserController {
     }
 
     @GetMapping("/registro/edit/{id}")
-    public String ShowEditForm(@PathVariable("id") Long id, Model model) {
+    public String ShowEditForm(@PathVariable("id") Long id, Model model) {//@PathVariable se utiliza para extraer valores de la URL y asignarlos a los parámetros del método en un controlador
+        //model es general
         Registro registro = serviceRegistro.getRegisterById(id);
         model.addAttribute("registro", registro);
         return "pages/editRegistro";
@@ -84,7 +85,8 @@ public class UserController {
 
     @PostMapping("/registro/update/{id}")
     public String UpdateRegister(@PathVariable("id") Long id, @ModelAttribute Registro registro) {
-        registro.setId(id);
+        //modelAtribute es especifico
+        registro.setId(id);//Asegura que el id esta establecido
         serviceRegistro.updateRegister(registro);
         return "redirect:/datos"; // Redirige a la lista de registros después de actualizar
     }

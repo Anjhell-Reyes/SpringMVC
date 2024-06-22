@@ -7,7 +7,7 @@
 <body>
 
 <section th:fragment="table">
-<table>
+<table class="tabla">
     <thead>
     <tr>
         <th>Nombre</th>
@@ -15,21 +15,23 @@
         <th>Edad</th>
         <th>Genero</th>
         <th>Descripcion</th>
-        <th>Acciones</th>
+        <th colspan="2">Acciones</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="registro : ${result}">
+        <!--th:each se utiliza para iterar sobre una colección de elementos y generar contenido dinámico para cada elemento en la colección-->
         <td th:text="${registro.id}">ID</td>
+        <!--th text reemplaza el contenido del elemento HTML con el valor proporcionado por la expresión en tiempo de ejecución.-->
         <td th:text="${registro.nombre}">Nombre</td>
         <td th:text="${registro.apellido}">Apellido</td>
         <td th:text="${registro.correo}">Correo</td>
         <td th:text="${registro.descripcion}">Descripción</td>
         <td>
-            <a th:href="@{/registro/edit/{id}(id=${registro.id})}">Editar</a>
+            <a th:href="@{/registro/edit/{id}(id=${registro.id})}"><i class="fa-solid fa-user-pen"></i></a>
         </td>
         <td>
-            <a th:href="@{/lista/{id}(id=${registro.id})}">Eliminar</a>
+            <a th:href="@{/lista/{id}(id=${registro.id})}"><i class="fa-solid fa-delete-left"></i></a>
         </td>
     </tr>
     </tbody>

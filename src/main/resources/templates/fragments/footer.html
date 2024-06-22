@@ -5,29 +5,17 @@
     <title>Title</title>
 </head>
 <body>
-    <article th:fragment="footer" class="w-full h-full flex items-center justify-around"><!-- permite definir fragmentos reutilizables de código HTML en plantillas Thymeleaf-->
-        <section class="flex-1 p-2 flex">
-           <ul class="flex-1 flex flex-col justify-around items-center">
-            <li>item_2</li>
-            <li>item_2</li>
-            <li>item_2</li>
-           </ul>
-        </section>
-        <section class="flex-1 p-2 flex">
-            <ul class="flex-1 flex flex-col justify-around items-center">
-                <li>item_2</li>
-                <li>item_2</li>
-                <li>item_2</li>
-            </ul>
-        </section>
-        <section class="flex-1 p-2 flex">
-            <ul class="flex-1 flex flex-col justify-around items-center">
-                <li>item_2</li>
-                <li>item_2</li>
-                <li>item_2</li>
-            </ul>
-        </section>
-    </article>
-
+<footer th:fragment="footer">
+    <div class="footer-content">
+        <div class="footer-social">
+            <a href="https://www.facebook.com/"><img src="/img/facebook.png" alt="Facebook" width="100px" height="100px"></a>
+            <a href="https://www.instagram.com/"><img src="/img/instagram.png" alt="Instagram" width="100px" height="100px"></a>
+            <a href="https://web.whatsapp.com/"><img src="/img/Whatsapp.png" alt="Whatsapp" width="100px" height="100px"></a>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 SergAnjhell. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
